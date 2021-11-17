@@ -1,0 +1,1 @@
+# rabbitmq-dotnet-client-bug
