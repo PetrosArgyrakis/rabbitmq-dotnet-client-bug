@@ -1,0 +1,43 @@
+1. Starting
+2. Create Model
+3. Start Consume
+17/11/2021 9:26:37 μμ +00:00 Consuming with RabbitMQTestClient_b8d8b979-8e21-4c4c-a068-6360ab23cc76
+17/11/2021 9:26:37 μμ +00:00 OnRegistered. Consumer Tags: RabbitMQTestClient_b8d8b979-8e21-4c4c-a068-6360ab23cc76 registered
+17/11/2021 9:26:40 μμ +00:00 OnReceived. Delivery Tag: 1
+OnShutDown: AMQP close-reason, initiated by Peer, code=406, text='PRECONDITION_FAILED - unknown delivery tag 1', classId=60, methodId=80
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at RabbitMQTestClient.Program.ChannelConsumeAsync(IModel model, String queueName, CancellationToken cancellationToken) in C:\Devel\RabbitMQClientBugDemo\RabbitMQClientBugDemo\Program.cs:line 134
+17/11/2021 9:26:37 μμ +00:00 OnRegistered. Consumer Tags: RabbitMQTestClient_b8d8b979-8e21-4c4c-a068-6360
+ab23cc76 registered
+17/11/2021 9:26:40 μμ +00:00 OnReceived. Delivery Tag: 1
+OnShutDown: AMQP close-reason, initiated by Peer, code=406, text='PRECONDITION_FAILED - unknown delivery
+tag 1', classId=60, methodId=80
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at RabbitMQTestClient.Program.ChannelConsumeAsync(IModel model, String queueName, CancellationToken ca
+ncellationToken) in C:\Devel\RabbitMQClientBugDemo\RabbitMQClientBugDemo\Program.cs:line 134
+2. Create Model
+3. Start Consume
+17/11/2021 9:26:41 μμ +00:00 Consuming with RabbitMQTestClient_6ed844c0-54e6-4b52-8ba6-eab78e986a7c
+17/11/2021 9:26:41 μμ +00:00 OnRegistered. Consumer Tags: RabbitMQTestClient_6ed844c0-54e6-4b52-8ba6-eab7
+8e986a7c registered
+17/11/2021 9:26:51 μμ +00:00 OnReceived. Delivery Tag: 1
+OnConnectionShutdown. Reason: AMQP close-reason, initiated by Library, code=541, text='Unexpected Excepti
+on', classId=0, methodId=0, cause=System.ObjectDisposedException: The semaphore has been disp17/11/2021 9:26:41 μμ +00:00 Consuming with RabbitMQTestClient_6ed844c0-54e6-4b52-8ba6-eab78e
+986a7c
+17/11/2021 9:26:41 μμ +00:00 OnRegistered. Consumer Tags: RabbitMQTestClient_6ed844c0-54e6-4b52-8ba6-eab78e986a7c registered
+17/11/2021 9:26:51 μμ +00:00 OnReceived. Delivery Tag: 1
+OnConnectionShutdown. Reason: AMQP close-reason, initiated by Library, code=541, text='Unexpected Exception', classId=0, methodId=0, cause=System.ObjectDisposedException: The semaphore has been disposed.
+   at System.Threading.SemaphoreSlim.CheckDispose()
+   at System.Threading.SemaphoreSlim.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at RabbitMQ.Client.Impl.AsyncConsumerWorkService.WorkPool.LoopWithConcurrency(CancellationToken cancellationToken)
+   at RabbitMQ.Client.Impl.ModelBase.OnSessionShutdown(Object sender, ShutdownEventArgs reason)
+   at RabbitMQ.Client.Impl.SessionBase.OnSessionShutdown(ShutdownEventArgs reason)
+   at RabbitMQ.Client.Impl.SessionBase.Notify()
+   at RabbitMQ.Client.Impl.ModelBase.HandleChannelClose(UInt16 replyCode, String replyText, UInt16 classId, UInt16 methodId)
+   at RabbitMQ.Client.Framing.Impl.Model.DispatchAsynchronous(IncomingCommand& cmd)
+   at RabbitMQ.Client.Impl.ModelBase.HandleCommand(IncomingCommand& cmd)
+   at RabbitMQ.Client.Impl.Session.HandleFrame(InboundFrame& frame)
+   at RabbitMQ.Client.Framing.Impl.Connection.MainLoopIteration()
+   at RabbitMQ.Client.Framing.Impl.Connection.MainLoop()
+17/11/2021 9:26:56 μμ +00:00 OnRegistered. Consumer Tags: RabbitMQTestClient_6ed844c0-54e6-4b52-8ba6-eab78e986a7c registered
+OnRecoverySucceeded. Reason: System.EventArgs
